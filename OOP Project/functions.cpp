@@ -16,19 +16,3 @@ void readFile_n(const char* filename, vector<string> &shapes, int& total)
 	file.close();
 	cout << "Done reading data from file: " << filename << endl;
 }
-
-void output(Shape shapes)
-{
-	for (auto i : shapes.getCircles())
-	{
-		i->output();
-	}
-	for (auto i : shapes.getSquares())
-	{
-		i.output();
-	}
-	for (auto i : shapes.getRectangles())
-	{
-		i.output();
-	}
-}

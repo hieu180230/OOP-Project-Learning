@@ -13,21 +13,23 @@ using namespace std;
 class Circle;
 class Square;
 class Rectangle;
+class Manager;
 
 class Shape
 {
 protected:
 	string name = "";
 	int total = 0;
-	vector<Circle*> circles;
-	vector<Square> squares;
-	vector<Rectangle> rectangles;
+	vector<Shape*> _shapes;
 
 	Shape() {};
 	Shape(string shape_name) : name(shape_name) {}
 
+	Manager* manager;
+
 public:	
 	~Shape(){}
+	
 
 	static Shape& getInstance()
 	{
@@ -41,23 +43,21 @@ public:
 		return instance;
 	}
 
-	double perimeter(){ return 0; }
-	double area(){ return 0; }
+	void ShapeFromString(vector<string> lines);
+
+	virtual double perimeter() { return 0; }
+	virtual double area() { return 0; }
 
 	string getName();
-	vector<Circle*> getCircles();
-	vector<Square> getSquares();
-	vector<Rectangle> getRectangles();
+	vector<Shape*> getShapes() { return this->_shapes; }
 
-	void append(Circle* circle);
-	void append(Square square);
-	void append(Rectangle rectangle);
-	
-	void output();
-	//void outputSorted();
+	virtual void output();
+	void outputSorted();
+	virtual void outputPnA() {};
 
 	int getTotalShape() { return this->total; }
 	void setTotalShape(int total) { this->total = total; }
+
 };
 
 
