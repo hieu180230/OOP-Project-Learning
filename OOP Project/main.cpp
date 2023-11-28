@@ -1,6 +1,6 @@
 #include "Components.h"
 #include <typeinfo>
-
+using namespace std;
 Manager manager;
 
 int main()
