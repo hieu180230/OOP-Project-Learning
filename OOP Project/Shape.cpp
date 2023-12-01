@@ -3,18 +3,6 @@
 
 string Shape::getName() { return this->name; }
 
-void Shape::output()
-{
-	int realTotal = _shapes.size();
-	cout << "Found " << realTotal << "/" << this->total << " shapes." << endl;
-	int i = 0;
-	for (i; i < _shapes.size(); i++)
-	{
-		cout << "| " << i + 1 << " | ";
-		_shapes[i]->output();
-	}
-}
-
 void Shape::outputSorted()
 {
 	vector<Shape*> sortShapes = _shapes;

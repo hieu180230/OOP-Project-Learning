@@ -2,6 +2,7 @@
 #include <typeinfo>
 using namespace std;
 Manager manager;
+Strategy strat;
 
 int main()
 {
@@ -11,5 +12,5 @@ int main()
 	readFile_n("input.txt", lines, total);
 	shapes->ShapeFromString(lines);
 	shapes->setTotalShape(total);
-	shapes->output();
+	strat.displayAllShape(shapes);
 }

@@ -28,7 +28,7 @@ protected:
 	Manager* manager;
 
 public:	
-	~Shape(){}
+	~Shape() { if (this) delete this; }
 	
 
 	static Shape& getInstance()
@@ -50,10 +50,11 @@ public:
 
 	string getName();
 	vector<Shape*> getShapes() { return this->_shapes; }
+	int getTotal() { return this->total; }
 
-	virtual void output();
+	virtual void output() {}
 	void outputSorted();
-	virtual void outputPnA() {};
+	virtual void outputPnA() {}
 
 	int getTotalShape() { return this->total; }
 	void setTotalShape(int total) { this->total = total; }

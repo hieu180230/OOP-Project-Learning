@@ -5,3 +5,4 @@
 #include "Rectangle.h"
 #include "Square.h"
 #include "Factory.h"
+#include "Strategy.h"
