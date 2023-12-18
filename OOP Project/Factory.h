@@ -12,7 +12,8 @@ public:
 	template <typename T, typename... Args>
 	T* parseShape(ShapeTypes type, Args&&... args)
 	{
-		switch (type)
+		return new T(forward<Args>(args)...);
+		/*switch (type)
 		{
 		case ShapeTypes::CIRCLE:
 			return new T(forward<Args>(args)...);
@@ -26,6 +27,6 @@ public:
 		default:
 			return nullptr;
 			break;
-		}
+		}*/
 	}
 };

@@ -28,7 +28,7 @@ protected:
 	Manager* manager;
 
 public:	
-	~Shape() { if (this) delete this; }
+	~Shape() {}
 	
 
 	static Shape& getInstance()
